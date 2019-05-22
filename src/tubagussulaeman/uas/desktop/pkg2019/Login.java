@@ -18,6 +18,10 @@ public class Login extends javax.swing.JFrame {
         initComponents();
     }
 
+    Login() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -60,6 +64,11 @@ public class Login extends javax.swing.JFrame {
         });
 
         btnlogin.setText("Login");
+        btnlogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnloginActionPerformed(evt);
+            }
+        });
 
         btnexit.setText("Exit");
 
@@ -132,6 +141,24 @@ public class Login extends javax.swing.JFrame {
     private void textpassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textpassActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textpassActionPerformed
+
+    private void btnloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnloginActionPerformed
+        // TODO add your handling code here:
+         String user = "admin";
+        String pass = "admin";
+        If(user.equalsIgnoreCase(textuser.getText()) && pass.equalsIgnoreCase(textpass.getText())) {
+            this.setVisible(false);
+            new Homepage().setVisible(true);
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(null, "Maaf user atau password anda salah");
+            textuser.setText("");
+            textpass.setText("");
+            textuser.requestFocus();
+
+
+        }
+    }
+    }//GEN-LAST:event_btnloginActionPerformed
 
     /**
      * @param args the command line arguments
